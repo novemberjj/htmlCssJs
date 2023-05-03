@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element attribute</title>
+</head>
+<body>
+    <h1>
+        Element의 속성에는 크게 두가지로 구분
+        - 태그의 속성, -css(style)의 속성
+    </h1>
+    <ul>
+        <li>
+            태그의 속성은 태그가 갖는 속성이기 때문에 속성명을 그대로 사용
+            tagName.id, tagName.src
+        </li>
+        <li>
+            class 처럼 여러개의 값을 갖는 속성들은 별도의 속성명을 사용
+            tagName.classList
+        </li>
+        <li>
+            css 관련 속성은 style 이라는 속성을 통해 css 프로퍼티에 접근 가능
+            tagName.style.color
+        </li>
+    </ul>
+    <img id="imgTag" src="/image/meme2.jpg" alt="이미지가 나타나지 않을때 표시" class="A B C">
+    <script>
+        const imgTag=document.getElementById('imgTag');
+        console.log(imgTag);
+        //imgTag의 속성들 id, src, alt, classList 콘솔에 찍어보기
+        console.log(imgTag.id); //.으로 접근하는 건 객체
+        console.log(imgTag.src);
+        console.log(imgTag.alt);
+        console.log(imgTag.classList[0]); //A
+        const src=document.getElementById('imgTag').src;
+        console.log(src);
+        const alt=document.getElementById('imgTag').alt;
+        console.log(alt);
+        const imgClass=document.querySelector('.A').src;
+        console.log(imgClass);
+        const imgClass1=document.querySelector('#imgTag').classList;
+        console.log(imgClass1);
+        const imgClass2=document.querySelector('.B').alt;
+        console.log(imgClass2);
+
+        console.log('---------------------');
+        for(const key in imgTag){
+            console.log(key,':',imgTag[key]); //imgTag가 가지고 있는 속성들
+        }
+    </script>
+</body>
+</html>

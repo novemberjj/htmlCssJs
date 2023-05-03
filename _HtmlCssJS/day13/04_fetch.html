@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            color: black;
+        }
+        header{
+            margin-top: 15px;
+        }
+        section{
+            margin-top: 10%;
+            display: flex;
+            justify-content: center;
+          
+        }
+        article:nth-of-type(2){
+            margin-left: 10%;
+            margin-right: 10%;
+       
+           
+        }
+    </style>
+</head>
+<body>
+    <!-- https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json -->
+    <header id="hd">
+
+    </header>
+
+    <section>
+
+    </section>
+
+    <script>
+      let header = document.querySelector('header');
+      let section = document.querySelector('section');
+      let str='';
+
+      fetch(`https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json`)
+      .then(resp => resp.json())
+      .then(json => populateHeader(json));
+
+      function populateHeader(jsonObj){
+        console.log(jsonObj);
+        str +=`<h1></h1>`;
+        let myH1 = document.createElement('h1');
+        myH1.innerText=jsonObj['squadName'];
+        header.appendChild(myH1);
+
+        let myPara = document.createElement('p');
+        myPara.innerText = 'Hometown: ' + jsonObj['homeTown'] +'// Formed: ' +jsonObj['formed'];
+        header.appendChild(myPara);
+        showHeros(jsonObj);
+        
+      }
+      function showHeros(jsonObj){
+       let heros = jsonObj['members'];
+
+       for(let i=0;i<heros.length;i++){
+        let myArticle = document.createElement('article');
+        let myH2= document.createElement('h2');
+        let myPara1=document.createElement('p');
+        let myPara2=document.createElement('p');
+        let myPara3=document.createElement('p');
+        let myList=document.createElement('ul');
+
+        myH2.innerText=heros[i]['name'];
+        myPara1.innerText='Secret identity: '+heros[i]['secretIdentity'];
+        myPara2.innerText='Age: '+heros[i]['age'];
+        myPara3.innerText='Superpowers:';
+        // myList.innerText=heros[i]['powers'];
+        // console.log(heros[i]['powers']);
+        let powerArr = heros[i]['powers'];
+        for(let i=0;i<powerArr.length;i++){
+            myList.innerHTML +=`<li>${powerArr[i]}</li>`;
+        }
+
+        section.appendChild(myArticle);
+       myArticle.appendChild(myH2);
+       myArticle.appendChild(myPara1);
+       myArticle.appendChild(myPara2);
+       myArticle.appendChild(myPara3);
+       myArticle.appendChild(myList);
+
+       
+        
+       }
+
+      }
+    </script>
+</body>
+</html>

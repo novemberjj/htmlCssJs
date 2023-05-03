@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Travel</h1>
+
+    <ul>
+        <li><a href="15_과제.html" id="home" class="links" onclick="clickCity(this)">Home</a></li>
+        <li><a href="" id="seoul" class="links" onclick="clickCity(this)">Seoul</a></li>
+        <li><a href=""id="paris" class="links" onclick="clickCity(this)">Paris</a></li>
+        <li><a href="" id="tokyo" class="links" onclick="clickCity(this)">Tokyo</a></li>
+<!-- 
+        <li id="home">Home</li>
+        <li id="seoul">Seoul</li>
+        <li id="paris">Paris</li>
+        <li id="tokyo">Tokyo</li> -->
+        
+    </ul>
+
+    <!-- <div id="pic"> -->
+        <img src="/image/travel.jpg" alt="" id="cityImg">
+    <!-- </div> -->
+
+    
+    
+
+    <script>
+        const clickCity = (elem) =>{
+            let idVal = elem.id;
+            let clsVal = elem.classList[0];
+            console.log(idVal);
+            console.log(clsVal);
+            document.getElementById('cityImg').src=`/img/${dival}.jpg`;
+        }
+    //    document.getElementById('home').addEventListener('click',function(){
+    //         document.getElementById('pic').innerHTML=`<img src="/image/travel.jpg" alt="">`;
+    //     })
+    //     document.getElementById('paris').addEventListener('click', function(){
+    //         document.getElementById('pic').innerHTML=`<img src="/image/paris.jpg" alt="">`;
+    //     })
+    //     document.getElementById('seoul').addEventListener('click',function(){
+    //         document.getElementById('pic').innerHTML=`<img src="/image/seoul.jpg" alt="">`;
+    //     })
+    //     document.getElementById('tokyo').addEventListener('click',function(){
+    //         document.getElementById('pic').innerHTML=`<img src="/image/tokyo.jpg" alt="">`;
+    //     })
+    </script>
+</body>
+</html>

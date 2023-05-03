@@ -1,0 +1,82 @@
+@font-face {
+    font-family: nm;
+    src: url(/font/Nanum_Myeongjo/NanumMyeongjo-Regular.ttf);
+}
+body{
+    font-family: nm;
+    background-color:rgb(240, 215, 146);
+    color: black;
+}
+.header{
+margin: 50px;
+}
+.header>h1{
+    font-size: 60px;
+}
+.header>h3{
+    font-size: 35px;
+}
+.menu{
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    /* block 태그들은 margin: auto 설정하면 가운데로 옴 */
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+#sushi{
+    width: 600px;
+    height: 400px;
+    background-size: 600px 400px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(/image/초밥.jpg);
+   
+}
+#hambuger{
+    width: 600px;
+    height: 400px;
+    background-size: 600px 400px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(/image/ham.jpg);
+   
+}
+#chiken{
+    width: 600px;
+    height: 400px;
+    background-size:600px 400px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(/image/치킨.jpg);
+   
+}
+#pizza{
+    width: 600px;
+    height: 400px;
+    background-size: 600px 400px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(/image/피자.png);
+   
+}
+/* .menu>div:first-child{
+    width: 300px;
+    height: 200px;
+    background-size: 300px 200px;
+    border-radius: 10px 10px 0 0;
+} */
+/* 공통속성을 빼면 나중에 그림만 추가하면 됨 */
+.menu>div>h2{
+    margin: 10px;
+}
+.menu>div:last-child{
+    padding: 20px;
+}
+div{
+    text-align: center;
+}
+.menu>div>p:last-child{
+    color: blue;
+    font-weight: 700;
+}
+.menu>div>p{
+    letter-spacing: 1px;
+    line-height: 25px;
+}

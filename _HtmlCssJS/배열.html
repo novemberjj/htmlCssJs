@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="배열.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="cover">
+            <a href="" class="name">NEWJEANS</a>
+            <ul>
+                <li>
+                    <a href="로그인.html" id="login">로그인</a>
+                </li>
+                <li>
+                    <a href="회원가입.html" id="signUp">회원가입</a>
+                </li>
+                <li>
+                    <a href="고객센터.html" id="qna">고객문의</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header">
+        <ul>
+            <li>
+                <a href="#" class="head1">종합/경제</a>
+            </li>
+            <li>
+                <a href="#" class="head2">방송/통신</a>
+            </li>
+            <li>
+                <a href="#" class="head3">IT</a>
+            </li>
+            <li>
+                <a href="#" class="head4">스포츠/연예</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <span class="material-symbols-outlined" id="prevBtn">
+            arrow_back_ios
+        </span>
+        <span class="material-symbols-outlined" id="nextBtn">
+            arrow_forward_ios
+        </span>
+        <div class="gisa">
+           
+                <div class="container">
+                </div>
+           
+
+        
+        </div>
+        
+        <div class="btnCon">
+        
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+            <div class="imgBtn"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+       <p> 본 콘텐츠의 저작권은 제공처 또는 네이버에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.
+Copyright ⓒ NAVER Corp. All Rights Reserved</p>
+    </div>
+    <script>
+        let gisa=document.querySelectorAll('.container');
+        console.log(gisa);
+        let currentIdx=0;
+        let str=[];
+       
+        str.push(` <nav>
+            <h1 class="logo">로고</h1>
+            <div class="ad">
+                ad
+                </div>
+                <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/teamimg/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/teamimg/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/teamimg/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`);
+        str.push(`<nav>
+                        <h1 class="logo">2번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`);
+        str.push(`<nav>
+                        <h1 class="logo">3번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`);
+        str.push(`<nav>
+                        <h1 class="logo">4번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`);
+        str.push(`<nav>
+                        <h1 class="logo">5번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`)
+        str.push(`<nav>
+                        <h1 class="logo">6번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`)
+        str.push(`<nav>
+                        <h1 class="logo">7번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`)
+        str.push(`<nav>
+                        <h1 class="logo">8번</h1>
+                        <div class="ad">
+                            ad
+                            </div>
+                    <ul class="icon">
+                        <!-- 구독, 이용자한마디, 공유, 날짜 -->
+                        <li><button>
+                            <span class="material-symbols-outlined">
+                                done
+                                </span>
+                            구독하기</button></li>
+                        <li>
+                            <button type="button">
+                                <span class="material-symbols-outlined">
+                                share_windows
+                                </span>
+                            </button>
+                        </li>
+                            <li class="date"></li>
+                    </ul>
+                </nav>
+                <section>
+                    <div class="article1">
+                        <div class="article1-img"></div>
+                        <div class="article1-txt">
+                            <h2>
+                                석유화학업계 신용도 희비...금호 '웃고' SK '울고' [Vault@Market]
+                            </h2>
+                            <p>
+                                볼트엣마켓(Vault@Market)은 가치있는 거래 정보를 제공하고 투자자를 보호(Vault)
+                                하는, <블로터>의 새로운 자본시장 정보제공 서비스입니다. 국내 신용평가사 상반기
+                                정기평가를 앞두고 석유화학업계의 신용등급 희비가 엇갈려 주목된다. 전방산업군으로서 현금흐름 개선에
+                            </p>
+                        </div>
+                    </div>
+                    <div class="article2">
+                        <div class="article2-img"></div>
+                        <div class="article2-txt">
+                            <p>금융사, 매출 줄여 전세사기 돕는데 정부는 언 발에 오줌만</p>
+                        </div>
+        
+                    </div>
+                    <div class="article3">
+                        <div class="article3-txt">
+                            <ul>
+                                <li><a href="">미 경쟁당국 MS의 액티비전 인수 반대..."클라우...</a></li>
+                                <li><a href="">메타, 광고 사업 회복에 매출 약 1년만에 증가...</a></li>
+                                <li><a href="">LG이노텍, '아이폰14 부진' 속 매출 늘었지만'...</a></li>
+                                <li><a href="">1분기 흑자전환 현대제철... 건설 불황 자동차 강...</a></li>
+                                <li><a href="">'1Q 적자' LG 디스플레이, '중소형 OLED'로 하반...</a></li>
+                                <li><a href="">삼성전기, '영업익 66% 감소'에도 '자동차 부품'...</a></li>
+                            </ul>
+                        </div>
+                        <div class="article3-img">
+                            <div class="article3-realimg"></div>
+                            <p>'주가 광풍' 금양, 2차전지 사업 추진 자금여력은?
+                                [Vault@Market]
+                            </p>
+                        </div>
+        
+                    </div>
+                   
+                    <div class="article4">
+                        <div class="title">
+                            <h3>HOT 뉴스</h3>
+                        </div>
+                        <div class="lank">
+                            <div class="article4-txt">
+                                <ul>
+                                    <li><a href="">'네이버클라우드 합병' 웍스</a></li>
+                                    <li><a href="">현대차그룹 한국전기차충전</a></li>
+                                    <li><a href="">'파운드리 1위' TSMC를 둘러</a></li>
+                                </ul>
+                            </div>
+                            <div class="artice4-img">
+                                <ul>
+                                    <li><a href=""><img src="/image/article4.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article5.PNG" alt="" width="80px" height="50px"></a></li>
+                                    <li><a href=""><img src="/image/article6.PNG" alt="" width="80px" height="50px"></a></li>
+                                </ul>
+        
+                            </div>
+                        </div>
+        
+                    </div>
+                </section>`)
+                console.log(str.length)
+
+                document.querySelector('.container').innerHTML = str[currentIdx];
+                document.querySelectorAll('.imgBtn')[currentIdx].style.transition="all 0.1s linear";
+                document.querySelectorAll('.imgBtn')[currentIdx].style.transform="scale(1.2)";
+                document.querySelectorAll('.imgBtn')[currentIdx].style.transform="scale(1.2)";
+                // document.querySelectorAll('.imgBtn')[currentIdx].style.border="2px solid black";
+
+
+
+
+
+
+
+
+
+
+document.getElementById('nextBtn').addEventListener('click', function() {
+    removeStyle();
+if (currentIdx == 7) {
+    currentIdx = 0;
+} else {
+currentIdx++;
+}
+document.querySelector('.container').innerHTML = str[currentIdx];
+
+document.querySelector('.gisa').style.animation = "none";
+void document.querySelector('.gisa').offsetWidth;
+document.querySelector('.gisa').style.animation = 'citycity 3s';
+addStyle();
+});
+
+document.getElementById('prevBtn').addEventListener('click', function() {
+    removeStyle();
+if (currentIdx == 0) {
+    currentIdx = 7;
+} else {
+    currentIdx--;
+}
+document.querySelector('.container').innerHTML = str[currentIdx];
+addStyle();
+
+document.querySelector('.gisa').style.animation = "none";
+void document.querySelector('.gisa').offsetWidth;
+document.querySelector('.gisa').style.animation = 'citycity 3s';
+});
+
+       document.querySelectorAll('.imgBtn').forEach((btn,index)=>{
+           btn.addEventListener('click',function(){
+            removeStyle();
+            console.log(index);
+            document.querySelector('.container').innerHTML=str[index];
+            currentIdx=index;
+            addStyle();
+          
+            document.querySelector('.gisa').style.animation = "none"; // 기존 애니메이션 초기화
+         void document.querySelector('.gisa').offsetWidth; // reflow를 일으켜 애니메이션 재생을 위한 시간을 확보
+        document.querySelector('.gisa').style.animation='citycity 3s';
+        
+        })
+       })
+      
+       function addStyle(){
+        document.querySelectorAll('.imgBtn')[currentIdx].style.transition="all 0.1s linear";
+        document.querySelectorAll('.imgBtn')[currentIdx].style.transform="scale(1.2)";
+        document.querySelectorAll('.imgBtn')[currentIdx].style.transform="scale(1.2)";
+        // document.querySelectorAll('.imgBtn')[currentIdx].style.border="2px solid black";
+        
+    }
+    function removeStyle(){
+           document.querySelectorAll('.imgBtn')[currentIdx].style.transition="none";
+           document.querySelectorAll('.imgBtn')[currentIdx].style.transform="noen";
+           document.querySelectorAll('.imgBtn')[currentIdx].style.transform="none";
+        //    document.querySelectorAll('.imgBtn')[currentIdx].style.border="none";
+
+       }
+       
+        
+ 
+    </script>
+</body>
+</html>

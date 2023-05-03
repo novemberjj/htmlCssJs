@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div:nth-of-type(2){
+            background-color: red;
+        }
+        ul{
+            list-style: none;
+        }
+        ul>li{
+            display: inline;
+        }
+        li>a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="ga">가</div>
+    <div >가</div>
+    <div id="ga">나</div>
+    <div id="ga">다</div>
+   <h1>Login</h1>
+    <form action="">
+        <input type="text" placeholder="아이디" > <br>
+        <input type="password" placeholder="비밀번호"> <br>
+        <input type="checkbox" name="status" value="y">로그인상태유지 <br>
+        <input type="submit" value="로그인">
+    </form>
+        아이디가 없습니까? <a href="">회원가입 시작</a> <br>
+        비밀번호를 잊으셨습니까? <a href="">여기</a>를 눌러 확인
+        <hr>
+        <input type="radio">개발자
+        <hr>
+        <form action="">
+
+            <input type="radio" name="build" value="주택">주택
+            <input type="radio" name="build" value="빌딩">빌딩
+            <input type="radio" name="build" value="도로">도로
+            <input type="submit">
+        </form>
+        이름 <input type="text" placeholder="이름을 입력하세요" name="name" id="name">
+        <hr>
+        <div id="home">홈</div>
+        <div id="join">회원가입</div>
+        <div id="login">로그인</div>
+        <form action="">
+            <textarea name="" id="textbox" cols="50" rows="30"></textarea> <br>
+            <input type="checkbox" checked>text
+        </form>
+        <div id="ad"></div>
+
+        <hr>
+        <header></header>
+        <nav></nav>
+        <section></section>
+        <footer></footer>    
+        
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                   <th></th>
+                   <th>Mon</th>
+                   <th>Tue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1st</td>
+                    <td>HTML</td>
+                    <td>CSS</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>WEB</td>
+                    <td>COLOR</td>
+                </tr>
+            </tbody>
+           
+        </table>
+        <hr>
+        <form action="">
+            상품개수 : <input type="number" min="0" max="10000" name="num">
+            <input type="submit">
+        </form>
+        <hr>
+        <input type="number" id="myNum">
+        <button type="button" id="btn">버튼</button>
+        <ul>
+            <li><a href="">A</a></li>
+            <li><a href="">A</a></li>
+            <li><a href="">A</a></li>
+            <li><a href="">A</a></li>
+            
+            
+        </ul>
+        <aside></aside>
+
+        <script>
+            document.getElementById('btn').onclick=()=>{
+                let num=Number(document.getElementById('myNum').value);
+                if(num<0){
+                    console.log('입력값이 0보다 작습니다.');
+                }else{
+                    console.log('입력값이 0보다 크거나 같습니다.');
+                }
+                
+            }
+        </script>
+        <input type="date">
+
+    </body>
+</html>

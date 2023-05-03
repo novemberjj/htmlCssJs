@@ -1,0 +1,168 @@
+ㅇ<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 야구 게임</title>
+</head>
+<body>
+    <h1>
+        컴퓨터가 0~9의 중복되지 않는 정수 3개를 랜덤으로 출제하면 맞추는 게임
+    </h1>
+    <h3>
+        게임 규칙
+    </h3>
+    <ol>
+        <li>
+            세자리의 숫자는 각 자리수를 갖고 서로 중복되지 않는다
+        </li>
+        <li>
+            각 자리수와 입력한 숫자의 자리수가 동일하면 1strike(스트라이크)
+        </li>
+        <li>
+            입력한 숫자가 포함되어 있으나 자리수가 동일하지 않으면 1ball(볼)
+        </li>
+        <li>
+            입력한 숫자가 전혀 포함되어 있지 않으면 out(아웃)
+        </li>
+        <li>
+            3스트라이크 이면 1게임 종료
+        </li>
+        <li>
+            플레이 예시 <br> 컴숫자 (4,2,9) > 내숫자(4,1,7) > 1s <br>
+
+        </li>
+    </ol>
+    <button type="button" id="start">게임시작</button>
+    야구게임 숫자 입력 : <input type="text" id="user">
+    <button type="button" id="myNum">숫자 입력</button>
+    <h1 id="result"></h1>
+    <script>
+        let com=new Set();
+        let userSet=new Set();
+        let count=0;
+        let comArr=[];
+       
+       
+
+        function comNum(){
+            while(com.size<3){
+                let ran=Math.floor(Math.random()*9)+1;
+                com.add(ran);
+            }
+            console.log(com);
+            for(let iter of com){
+            comArr.push(iter);
+         }
+        }
+        document.getElementById('start').addEventListener('click',function(){
+            count++;
+            comNum();
+            // let user=document.getElementById('user').value;
+            // userArr=user.split("");
+            // for(let iter of userArr){
+            //     userSet.add(Number(iter));
+            // }
+            // compare();
+            // console.log(userSet);
+            // compare2();
+            // if(ball==0&&strike==0){
+            //     document.getElementById('result').innerText=`OUT`;
+            // }else{
+            //     document.getElementById('result').innerText=`${strike}S ${ball}B`;
+            // }
+
+        })
+        document.getElementById('myNum').addEventListener('click',function(){
+            let user=document.getElementById('user').value;
+            let userArr=user.split("");
+            console.log(userArr);
+            for(let iter of userArr){
+                userSet.add(Number(iter));
+            }
+            compare(userArr);
+        })
+
+       
+
+        function compare(userArr){
+            count++;
+            let s=0;
+            let b=0;
+
+        
+         console.log(comArr);
+         console.log(userArr);
+
+        //  for (let i = 0; i < comNums.length; i++) {
+        //     // 컴숫자를 기준으로
+        //     for (let j = 0; j < myNums.length; j++) {
+        //       // 내 숫자를 비교한다
+        //       if (comNums[i] == myNums[j]) {
+        //         // 컴의 숫자와 내 숫자가 같은 상황에서
+        //         if (i == j) {
+        //           // 자리수도 같다 => strike
+        //           strike++;
+        //         } else {
+        //           // 자리수가 다르다 => ball
+        //           ball++;
+        //           console.log(ball);
+        //         }
+        //         break;
+        //       }
+        //     }
+        //   } // 비교판정 종료
+
+         for(let i=0;i<comArr.length;i++){
+           for(let j=0;j<userArr.length;j++){
+            if(comArr[i]==userArr[j]){
+                if(i==j){
+                    s++;
+                }else{
+                    b++;
+                    console.log(comArr[i],userArr[j]);
+                }
+         }
+        }
+    }
+    if(s==3){
+        document.getElementById('result').innerText=`3S 게임종료 \n 시도횟수:${count}`;
+        return;
+    }else{
+        if(b==0&&s==0){
+            document.getElementById('result').innerText='OUT';
+        }else{
+            document.getElementById('result').innerText=`${s}S ${b}B`;
+        }
+    }
+
+        
+
+}
+
+        // function compare2(){
+        //     let str='';
+        //     let ball=0;
+        //     let strike=0;
+        //     for(let iter of userSet){
+        //         for(let index of com){
+        //             if(iter==index){
+        //                 console.log(iter,index);
+        //                 strike++;
+        //             }
+        //         }
+        //         if(com.has(iter)){
+        //             ball++;
+        //         }else{
+        //             str='OUT';
+        //         }
+        //     }
+        //      ball=ball-strike;
+        //      console.log(strike,ball);
+
+        // }
+       
+    </script>
+</body>
+</html>

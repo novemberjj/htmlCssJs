@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <button type="button" onclick="play(1);"><img src="/image/math_img_1.jpg" alt=""></button>
+    <button type="button" onclick="play(2);"><img src="/image/math_img_2.jpg" alt=""></button>
+    <button type="button" onclick="play(3);"><img src="/image/math_img_3.jpg" alt=""></button>
+
+    <h3 id="result"></h3>
+
+    <script>
+       //컴퓨터 값 생성
+       //승패여부
+       //결과출력
+
+
+       let win=0;
+       let draw=0;
+       let lose=0;
+       let rate=0;
+       
+       let count=0;
+       
+       function play(num){
+        count++;
+           let com = comNum();
+        if(num==1){
+            switch(com){
+                case 1: result="비겼습니다."; draw++; break;
+                case 2: result="졌습니다."; lose++; break;
+                case 3: result="이겼습니다."; win++; break;
+            }
+        }else if(num==2){
+            switch(com){
+                case 1: result="이겼습니다."; win++; break;
+                case 2: result="비겼습니다."; draw++; break;
+                case 3: result="졌습니다."; lose++; break;
+            }
+        }else{
+            switch(com){
+                case 1: result="졌습니다."; lose++; break;
+                case 2: result="이겼습니다."; win++; break;
+                case 3: result="비겼습니다."; draw++; break;
+            }
+        }
+        console.log(result);
+        com=korean(com);
+        num=korean(num);
+
+        rate=((win/count)*100).toFixed(2);
+
+        document.getElementById('result').innerHTML=
+        `컴퓨터 : ${com} <br> 사용자 : ${num} <br> ${result}<br>
+        현재 전적 <br>승 : ${win}<br> 패: ${lose} <br> 무 : ${draw} <br>
+        승률 : ${rate}%`;
+       }
+
+       function korean(ran){
+        switch(ran){
+            case 1: return "가위"; break;
+            case 2: return "바위"; break;
+            case 3: return "보"; break;
+
+        }
+       }
+
+       function comNum(){
+        return Math.floor(Math.random()*3)+1;
+       }
+
+
+
+    //    function setDistinct(){
+    //     if(playerState == comState){
+    //         result=0;
+    //    }else{
+
+    //    }
+    // }
+
+
+    </script>
+</body>
+</html>

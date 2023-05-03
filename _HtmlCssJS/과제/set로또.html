@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 만들기</title>
+</head>
+<body>
+    <h1>
+        1~45까지의 중복되지 않는 숫자 6개를 랜덤으로 추출 => 추출
+        set객체를 사용하여 생성
+    </h1>
+    <button type="button" id="com">랜덤번호 6개 생성(출력)</button>
+    <h1 id="printNum"></h1>
+    <button type="button" id="user">당첨번호 7개 (마지막 번호는 보너스번호) 출력</button>
+    <h1 id="printNum2"></h1>
+    <button type="button" id="resultBtn">결과확인</button>
+    <button type="button" onclick="window.location.reload();">다시 시도</button>
+    <h1 id="printResult"></h1>
+    <script>
+
+        //배열 내용 삭제 : splice(index, count) => index위치부터 count 개수만큼 삭제
+        //배열 내용 삭제 : splice(index, count, item)
+        // => index 위치부터 count 개수만큼 삭제 후 item 삽입
+        const com = new Set();
+        const user = new Set();
+        let count=0;
+        const tmp=new Set();
+        const comArr = [];
+        const userArr = [];
+        let bonus=0;
+        function makeNum(who, n){
+            // for(let i=0;i
+            //     who.add(Math.floor(Math.random()*45)+1);
+            // }
+            while(who.size<n){
+                who.add(Math.floor(Math.random()*45)+1);
+            }
+           
+        }
+        document.getElementById('com').addEventListener('click',function(){
+            let str='';
+            makeNum(com, 7);
+            for(const iter of com.keys()){
+                comArr.push(iter);
+                str += iter+" ";
+            }
+            bonus=comArr.pop();
+            console.log(comArr);
+            console.log(bonus);
+            console.log(com);
+            document.getElementById('printNum').innerText=str;
+        })
+        document.getElementById('user').addEventListener('click', function(){
+            let str='';
+            makeNum(user,6);
+            for(const iter of user.keys()){
+                userArr.push(iter);
+                str += iter+" ";
+            }
+            console.log(user);
+            console.log(userArr);
+            document.getElementById('printNum2').innerText=str;
+        })
+        function compare(){
+            console.log(userArr);
+            console.log(comArr);
+            let str='';
+            for(let i =0;i<userArr.length;i++) {
+                for (let j=0;j<comArr.length;j++) {
+                    if (userArr[i]==comArr[j]) {
+                        count++;
+                        console.log(userArr[i], comArr[i]);
+                    }
+                }
+            }
+            console.log(bonus);
+           switch(count){
+            case 6: str='1등'; break;
+            case 5:
+                    if(user.has(bonus)==true){
+                        str='2등';
+                    }else{
+                        str='3등';
+                    }
+                 break;
+            case 4: str='4등'; break;
+            case 3: str='5등'; break;
+           default: str='꽝'; break;
+           }
+           return str;
+        
+        }
+        document.getElementById('resultBtn').addEventListener('click',function(){
+            document.getElementById('printResult').innerText= compare();
+        })
+        
+       
+        
+    </script>
+</body>
+</html>

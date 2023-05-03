@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body{
+            text-align: center;
+            position: relative;
+           
+        }
+        #add{
+            display: inline-block;
+            background-color: rgb(108, 171, 207);
+            width: 500px;
+            height: 50px;
+           font-size: 30px;
+          
+        }
+        #itemList{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: 500px;
+            height: 500px;
+        }
+        ul{
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            text-align: left;
+        }
+        li{
+            padding-left: 10px;
+            list-style: none;
+            background-color: rgb(199, 195, 195);
+            width: 490px;
+            height: 50px;
+            font-size: 20px;
+        }
+        li>span{
+        padding-right: 10px;
+           float: right;
+        }
+        li:nth-child(2n){
+            background-color: beige;
+        }
+        li:hover{
+            background-color: bisque;
+        }
+      
+        
+    </style>
+</head>
+
+    <body>
+        <h1>여행 준비물 점검 목록</h1>
+        <div id="add">
+          <input type="text" id="text" autofocus="true">
+          <button type="button" id="btn">추가</button>
+        </div>
+        <div id="itemList">
+          <ul id="ul">
+            
+          </ul>
+        </div>
+    
+
+
+   
+   <script>
+    //DB에 데이터가 담아있게
+       let index;
+       let cnt=0;
+       function addList(){
+        let item =document.getElementById('text').value;
+        document.getElementById('ul').innerHTML+=`<li>${item}
+            <span class="material-symbols-outlined" id="${cnt++}" >close</span></li> `;
+    }
+
+    document.getElementById('btn').addEventListener('click', function(){
+        addList();
+    })
+
+    document.querySelector('#ul').addEventListener('click', function (e) {
+        if (e.target.tagName == 'SPAN') {
+        const id = e.target.id;
+        console.log(id);
+        const li = document.getElementById(id).parentNode;
+        li.remove();
+            }
+    });
+
+
+    
+
+</script>
+   </body>
+</html>

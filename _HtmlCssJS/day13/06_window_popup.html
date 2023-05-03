@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+<body>
+    <h1>
+        Window 메서드 종류
+    </h1>
+    <ul>
+        <li>
+            window.open('url','window name', 'option(size, scroll..)')
+        </li>
+        <li>
+            alert() : 경고창 띄움, prompt() : input 받을 수 있는 창, confirm() : 확인/취소 창 
+        </li>
+        <li>
+            setInterval(function, milliseconds);
+            일정 간격으로 지속적 실행문을 실행시킬 때 사용
+        </li>
+        <li>
+            setTimeout(function, milliseconds);
+            일정시간동안 실행시킬 때 사용
+        </li>
+    </ul>
+    <button type="button" onclick="openWindow();">열기</button>
+    <button type="button" onclick="closeWindow();">닫기</button>
+    <button type="button" onclick="alertt();">alert</button>
+    <button type="button" onclick="promptMsg();" >prompt</button>
+    <button type="button" onclick="confirmMsg();">confirm</button>
+    <h3 id="msg"></h3>
+    <script>
+        // alert('123');
+        // prompt('123');
+        // confirm('123');
+
+        let myWindow;
+        function openWindow(){
+            myWindow=window.open("","myWindow","width=400, height=500");
+        }
+
+        function closeWindow(){
+            if(myWindow){
+                myWindow.close();
+            }
+        }
+
+        function alertt(){
+            alert('alert창 입니다.');
+        }
+        function promptMsg(){
+            let str=prompt('내용 입력');
+            console.log(str);
+           if(str==null){
+               document.getElementById('msg').innerText='취소';
+           }else if(str==''){
+               document.getElementById('msg').innerText='내용 없음';
+           }else{
+               document.getElementById('msg').innerText=str;
+           }
+        }
+        function confirmMsg(){
+            if(confirm('확인 / 취소')){
+                document.getElementById('msg').innerText='확인';
+            }else{
+                document.getElementById('msg').innerText='취소';
+            }
+        }
+
+    
+    </script>
+</body>
+</html>

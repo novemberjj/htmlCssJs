@@ -1,0 +1,78 @@
+*{
+   box-sizing: border-box;
+   /* 마진 0 패딩 0 */
+}
+body{
+    /* % : 부모가 기준 */
+    margin: 0;
+    background-image: url(/image/Web-designer-1.webp);
+    /* inner- gradient , url 같이 줄 수 있음 쉼표 필수 */
+    /* vh : 모니터(브라우저) 높이 기준 */
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.gray{
+    /* display: flex; justify-content: space-between; => float left right 할 필요 없이 알아서 갈라짐 */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.322);
+    background-size: cover;
+    position: relative;
+}
+.navbar{
+    padding-top: 20px;
+}
+.navbar>a{
+    padding-left: 50px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.navbar>a{
+    float: left;
+}
+.navbar>ul{
+    float: right;
+    padding-right: 50px;
+}
+.navbar>ul>li{
+    
+    display: inline;
+    list-style: none;
+    padding-right: 20px;
+}
+.navbar>ul>li>a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    
+}
+.middle{
+    width: 700px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.middle>div>p{
+    font-size: 50px;
+    font-weight: 700;
+
+}
+.middle>div>a{
+    color: white;
+    text-decoration: none;
+    border: 1px solid green;
+    border-radius: 20px;
+    padding: 10px;
+}
+.middle>div>a:hover{
+    background-color: white;
+    color: black;
+    transition-duration: 1s;
+}
+

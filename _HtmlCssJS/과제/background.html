@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        .bg, .white{
+            left: 0%;
+            top: 0%;
+            right: 0%;
+            bottom: 0%;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        .bg{
+            background-image:url('/image/Web-designer-1.webp');
+            background-repeat: no-repeat;
+             background-size: 100% 100%;
+             /* animation-name: front; */
+             animation-duration: 5s;
+             z-index: 100;
+             height: 100vh;
+             
+            }
+            .white{
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+
+        }
+         @keyframes front{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="white"></div>
+
+    <script>
+        window.addEventListener('load',function(){
+            setTimeout(function(){
+                document.querySelector('.bg').style.setProperty('animation-name','front');
+
+            },1000);
+        })
+    </script>
+    
+</body>
+</html>

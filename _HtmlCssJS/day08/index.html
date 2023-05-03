@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        이름 : <input type="text" id="name"><br>
+        거주지 : <input type="text" id="adr"><br>
+        좋아하는리스트<br>
+        리스트1 : <input type="text" id="list1"><br>
+        리스트2 : <input type="text" id="list2"><br>
+        리스트3 : <input type="text" id="list3"><br>
+        이메일 : <input type="email" id="email"><br>
+        PET 소유여부 : <input type="text" id="pet"><br>
+        지금 가장 원하는 것 : <input type="text" id="want"><br>
+        <button type="button" onclick="makeObj()">객체로 전송</button>
+    </form>
+
+    <h1 id="">전송받은 데이터 출력</h1>
+    <button type="button" onclick="print();">출력</button>
+
+    <table border="1">
+        <tr>
+            <td>이름</td>
+            <td id="tName"></td>
+        </tr>
+        <tr>
+            <td>거주지</td>
+            <td id="tAdr"></td>
+        </tr>
+        <tr>
+            <td>좋아하는 리스트</td>
+            <td id="tList"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td id="tEmail"></td>
+        </tr>
+        <tr>
+            <td>펫 소유여부</td>
+            <td id="tPet"></td>
+        </tr>
+        <tr>
+            <td>지금 가장 원하는 것</td>
+            <td id="tWant"></td>
+        </tr>
+     
+    </table>
+
+    <script>
+        const myData={
+            name: '',
+            adr: '',
+            email: '',
+            pet: '',
+            want: '',
+        };
+        
+        function makeObj(){
+            let name= document.getElementById('name').value;
+            let adr= document.getElementById('adr').value;
+            let list1= document.getElementById('list1').value;
+            let list2= document.getElementById('list2').value;
+            let list3= document.getElementById('list3').value;
+            let email= document.getElementById('email').value;
+            let pet= document.getElementById('pet').value;
+            let want= document.getElementById('want').value;
+            
+           myData.name=name;
+           myData.adr=adr;
+           myData.list1=[list1,list2,list3];
+           myData.email=email;
+           myData.pet=pet;
+           myData.want=want;
+
+           console.log(myData.list1);
+
+   
+        }
+
+        function print(){
+            document.getElementById('tName').innerText=`${myData.name}`;
+            document.getElementById('tAdr').innerText=`${myData.adr}`;
+            document.getElementById('tList').innerHTML=
+            `<li>${myData.list1[0]}</li><li>${myData.list1[1]}</li><li>${myData.list1[2]}</li>`;
+            document.getElementById('tEmail').innerText=`${myData.email}`;
+            document.getElementById('tPet').innerText=`${myData.pet}`;
+            document.getElementById('tWant').innerText=`${myData.want}`;
+
+
+        }
+        
+           
+
+        
+
+    </script>
+</body>
+</html>

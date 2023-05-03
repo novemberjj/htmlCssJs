@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count만들기</title>
+</head>
+<body>
+    <!-- 
+        button 2개를 준비
+        + => 값이 1씩증가, - => 값이 1씩 감소
+     -->
+     <h2 id="number"></h3>
+     <button type="button" id="incre">+</button>
+     <button type="button" id="decre">-</button>
+
+     <script>
+        const number= document.getElementById('number');
+        const incre=document.getElementById('incre');
+        const decre=document.getElementById('decre');
+        incre.addEventListener('click', function(){
+            let currVal= Number(number.innerText);
+            console.log(currVal);
+            number.innerText=currVal+1;
+        });
+        decre.addEventListener('click',function(){
+            let currVal= Number(number.innerText);
+            console.log(currVal);
+            if(currVal<=0){
+                number.innerText=0;
+            }else{
+                number.innerText=currVal-1;
+            }
+        });
+
+
+        // let cnt=0;
+        // function plus(){
+        //     cnt++;
+        // }
+        // function minus(){
+        //     if(cnt>0){
+        //         cnt--;
+        //     }
+        // }
+        // document.getElementById('plus').addEventListener('click', ()=>{
+        //     plus();
+        //     document.getElementById('num').innerText=cnt;
+        // })
+        // document.getElementById('minus').addEventListener('click', ()=>{
+        //     minus();
+        //     document.getElementById('num').innerText=cnt;
+        // })
+     </script>
+</body>
+</html>

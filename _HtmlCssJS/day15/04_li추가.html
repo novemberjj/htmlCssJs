@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="once1">Li Tag 한 번에 추가하기</button>
+    <button type="button" id="next1">Li Tag 순차적 추가하기</button>
+    <button type="button" id="once2">Li Tag 한 번에 추가하기</button>
+    <button type="button" id="next2">Li Tag 순차적 추가하기</button>
+    <hr>
+    <button type="button" id="btn1">li 한 번에 추가</button>
+    <button type="button" id="btn2">li 하나씩 추가</button>
+    <button type="button" id="btn3">li 한 번에 추가</button>
+    <button type="button" id="btn4">li 하나씩 추가</button>
+    <ul id="ul1"></ul>
+    <hr>
+    <ol id="ol1"></ol>
+    <hr>
+    <ul id="ul2"></ul>
+    <hr>
+    <ol id="ol2"></ol>
+
+    <script>
+        let text=['HTML','CSS','Javascript','SQL'];
+        let cnt=0;
+        let cnt2=0;
+
+        document.getElementById('once1').addEventListener('click',function(){
+            for(let i=0;i<text.length;i++){
+                document.getElementById('ul1').innerHTML+=`<li><a href="">${text[i]}</a></li>`;
+            }
+        })
+        document.getElementById('next1').addEventListener('click',function(){
+            setInterval(print,1000);
+        })
+        function print(){
+            if(cnt<text.length){
+                document.getElementById('ol1').innerHTML+=`<li><a href="">${text[cnt++]}</a></li>`;
+            }
+        }
+        
+        document.getElementById('once2').addEventListener('click',function(){
+            for(let i=0;i<text.length;i++){
+                let li=document.createElement('li');
+                li.innerHTML=`<a href="">${text[i]}</a>`;
+                document.getElementById('ul2').appendChild(li);
+            }
+        })
+        document.getElementById('next2').addEventListener('click',function(){
+            if(cnt2<text.length){
+                let li=document.createElement('li');
+                li.innerHTML=`<a href="">${text[cnt2++]}</a>`;
+                document.getElementById('ol2').appendChild(li);
+            }
+        })
+
+        // //한 번에 li 추가
+        // document.getElementById('btn1').addEventListener('click',function(){
+        //     let str = `<li>HTML</li>`;
+        //     str+=`<li>CSS</li>`;
+        //     str+=`<li>Javascript</li>`;
+        //     str+=`<li>SQL</li>`;
+        //     document.getElementById('ul1').innerHTML=str;
+        // })
+
+        // //하나씩 li 추가
+        // const datas=['HTML','CSS','Javascript','SQL']
+        // let idx=0;
+        // document.getElementById('btn2').addEventListener('click',function(){
+        //     if(idx<datas.length){
+        //         let str=`<li>${datas[idx]}</li>`;
+        //         document.getElementById('ol1').innerHTML+=str; //누적해줘야 안의 값이 안바뀜
+        //         idx++;
+        //     }
+        // })
+
+        // //한 번에 추가 appendChild 이용
+        // document.getElementById('btn3').addEventListener('click',()=>{
+        //     let ul=document.getElementById('ul2');
+        //     datas.forEach((elem)=>{ //HTML CSS Javascript SQL 순으로 들어올예정
+        //         let li=document.createElement('li'); //<li></li>
+        //         li.innerText=elem;//<li>HTML</li>
+        //         ul.appendChild(li);
+        //     })
+        // })
+
+        // //하나씩 추가 appendChild 이용
+        // let index=0;
+        // const ol2=document.getElementById('ol2');
+        // document.getElementById('btn4').addEventListener('click',function(){
+        //     if(index<datas.length){
+        //         let li=document.createElement('li');
+        //         li.innerText=datas[index];
+        //         ol2.appendChild(li);
+        //         index++;
+        //     }
+        // })
+
+    </script>
+</body>
+</html>

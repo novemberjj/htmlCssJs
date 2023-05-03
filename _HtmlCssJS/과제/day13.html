@@ -1,0 +1,111 @@
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        구구단 영역 내에서 랜덤으로 문제를 내면 정답을 맞추는 로직
+    </h1>
+    <ul>
+        <li>
+            총 문제는 10문제 ol li 추가 input박스
+        </li>
+        <li>
+
+        </li>
+        <li></li>
+    </ul>
+    <button type="button" id="startBtn">문제출력</button>
+    
+    
+    <ol id="q"></ol>
+    <button type="button" id="compareBtn">정답확인</button>
+    
+    <h3 id="printRatio"></h3>
+
+    <script>
+        let a=[];
+        let cnt=0;
+        let dapArr=[];
+        
+        function makeIncere(){
+            return Math.floor(Math.random()*9)+1;
+        }
+        function makeDan(){
+            return Math.floor(Math.random()*8)+2;
+
+        }
+
+        function makeGugu(){
+            let str='';
+            while(cnt<10){
+                let dan=makeDan();
+                let incre=makeIncere();
+                
+                a.push(dan*incre);
+                str+=`<li>${dan}X${incre}= <input type=text id="dap${cnt}"></li>`;
+                
+                cnt++;
+            }
+            console.log(a);
+            document.getElementById('q').innerHTML+=str;
+        }
+
+        document.getElementById('startBtn').addEventListener('click',function(){
+            makeGugu();
+        })
+
+
+        let correct=0; //정답
+        let count2=0; //1~10까지 돌아가는 index
+        document.getElementById('compareBtn').addEventListener('click',function(){
+            //정답이 나오는 부분
+            while(count2<10){
+                let userInput=document.getElementById(`dap${count2}`); //1번 사용자 정답
+                if(userInput.value==a[count2]){
+                    correct++;
+                    userInput.value+=': 정답';
+                    userInput.style.backgroundColor='green'; //객체명.style.css속성 - 쓰지 않음
+                }else{
+                    userInput.value+=': 오답';
+                    userInput.style.backgroundColor='red';
+                }
+                count2++;
+            }
+            document.getElementById('printRatio').innerText=`정답률 : ${(correct/count2).toFixed(2)*100}`;
+        })
+
+
+        // document.getElementById('compareBtn').addEventListener('click',function(){
+        //     let str='';
+        //     let correct=0;
+        //     let ratio=0;
+        //     for(let i=0;i<a.length;i++){
+        //         let ddap=document.getElementById(`dap${i}`).value;
+        //         str='';
+        //         str = `${i+1}번 문제 : `;
+        //         console.log(ddap);
+        //         if(ddap==a[i]){
+        //              str+='O \n';
+        //             correct++;
+        //             } else{
+        //                 str+='X => 정답 : '+a[i]+'\n';
+        //                 }
+        //         document.getElementById('printRatio').innerText+=str;
+        //         }
+        //     ratio=(correct/10)*100;
+        //     document.getElementById('printRatio').innerText+=`정답률 : ${ratio}%`;
+        //     console.log(ratio);
+
+
+        // })
+
+        
+    </script>
+</body>
+</html>

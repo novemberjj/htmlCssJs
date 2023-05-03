@@ -1,0 +1,202 @@
+.container{
+    width: 900px;
+    height: 540px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid black;
+}
+/* nav */
+nav{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid black; */
+    border-bottom: 2px solid gray;
+}
+.logo_1{
+    margin-left: 20px;
+  display: inline-block;
+  width: 240px;
+  height: 55px;
+   background-image: url(/조별과제/teamimg/arti1_logo.PNG);
+    
+}
+nav>ul{
+    /* display: inline-block; */
+    /* border: 1px solid black; */
+    padding: 0 0 0 0;
+    margin: 0 0 0 20px;
+    list-style: none;
+}
+nav>ul>li{
+    display: inline;
+   
+}
+nav a{
+    text-decoration: none;
+    
+}
+.ad_1{
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    height: 60%;
+    /* border: 1px solid black; */
+    background-image: url(/조별과제/teamimg/arti2_ad.PNG);
+    margin-top: 20px;
+    margin-right: 20px;
+    
+}
+nav>.icon>li>button>span{
+    font-size: 14px;
+}
+
+.article1_1{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    width: 450px;
+    float: left;
+    height: 420px;
+}
+.article2_1{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    width: 446px;
+    float: left;
+    height: 420px;
+}
+.article1_1-img{
+    box-sizing: border-box;
+/* border: 1px solid black; */
+width: 450px;
+height: 200px;
+float: left;
+
+}
+.article1_1-img{
+    
+    margin-top: 15px;
+    margin-left: 5px;
+} 
+.arti1-img1{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    width: 140px;
+    height: 200px;
+    float: left;
+    margin-left: 10px;
+ 
+}
+.arti1-img2{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    width: 140px;
+    height: 200px;
+    float: left;
+    margin-left: 5px;
+ 
+}
+.arti1-img3{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    width: 140px;
+    height: 200px;
+    float: left;
+    margin-left: 5px;
+ 
+}
+.arti1-img1 >p{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    
+    
+}
+.arti1-img2 >p{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+.arti1-img3 >p{
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.arti1-img1>p:hover{
+    text-decoration: underline;
+}
+.arti1-img2>p:hover{
+    text-decoration: underline;
+}
+.arti1-img3>p:hover{
+    text-decoration: underline;
+}
+
+.arti2-1{
+    box-sizing: border-box;
+    width: 100%;
+    height: 140px;
+    /* border: 1px solid black; */
+    float: left;
+    border-left: 1px dotted gray;
+    padding-left: 10px;
+}
+
+.arti2-1>h4{
+    margin: 10px 0 0 0;
+    padding: 0 0 0 0;
+}
+.arti2-1>h4:hover{
+    margin: 10px 0 0 0;
+    padding: 0 0 0 0;
+    text-decoration: underline;
+}
+
+.arti2-txt{
+    text-align: justify;
+    width: 70%;
+    /* border: 1px solid black; */
+    float: left;
+    
+}
+.arti2-txt:hover{
+
+    text-decoration: underline;
+}
+.arti2-img_1{
+    margin-left: 10px;
+    width: 106px;
+    height: 75px;
+    background-image: url(/조별과제/teamimg/arti2_5.PNG);
+    float: left;
+    background-size: cover;
+    margin-top: 15px;
+    /* border: 1px solid black; */
+}
+.arti2-img_2{
+    margin-left: 10px;
+    width: 106px;
+    height: 75px;
+    background-image: url(/조별과제/teamimg/arti2_6.PNG);
+    float: left;
+    background-size: cover;
+    margin-top: 15px;
+    /* border: 1px solid black; */
+}
+.arti2-img_3{
+    margin-left: 10px;
+    width: 106px;
+    height: 75px;
+    margin-top: 15px;
+    background-image: url(/조별과제/teamimg/arti2_7.PNG);
+    float: left;
+    background-size: cover;
+    /* border: 1px solid black; */
+}
+.arti2-1:nth-of-type(2){
+    border-top: 1px dotted gray;
+    border-bottom: 1px solid gray;
+}
